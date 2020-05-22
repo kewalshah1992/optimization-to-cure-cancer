@@ -1,0 +1,18 @@
+param num_rows := 60; # Number of rows
+param num_cols := 80; # Number of columns
+param num_beams := 126; # Number of beams in small sample
+
+param critical_max := 2;
+param tumor_min := 10;
+
+param W_C = 0.2;
+param W_T = 0.8;
+
+# read in beam data into 3D array beam_values, beam m
+read {m in BEAM, i in ROWS, j in COLS} beam_value[m,i,j] < beam_raw_actual.txt;
+
+# read in tumor data
+read {i in ROWS, j in COLS} tumor_value[i,j] < tumor_raw_actual.txt;
+
+# read in critical area data
+read {i in ROWS, j in COLS} critical_value[i,j] < critical_raw_actual.txt;

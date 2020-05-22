@@ -1,0 +1,17 @@
+#for actual example
+reset;
+model treatment3.mod;
+data actual_treatment3.dat;
+option solver cplex;
+solve;
+display X > actual_solution3.txt;
+
+#for small example
+reset;
+model treatment3.mod;
+data small_treatment3.dat;
+option solver cplex;
+solve;
+display X > small_solution3.txt;
+
+ 
